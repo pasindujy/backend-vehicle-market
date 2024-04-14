@@ -1,0 +1,7 @@
+version: 0.1
+endpoints:
+- name: Vehicle API
+  port: 8080
+  type: REST
+  networkVisibility: Public
+  context: /vehicles
