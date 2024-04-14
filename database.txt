@@ -1,0 +1,6 @@
+id
+brand
+model
+fueltype
+available
+price
