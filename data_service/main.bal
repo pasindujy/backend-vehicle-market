@@ -30,11 +30,12 @@ isolated function addVehicle(Vehicle vh) returns int|error {
         VALUES (${vh.id}, ${vh.brand}, ${vh.model},  
                 ${vh.fueltype}, ${vh.available}, ${vh.price})
     `);
-    int|string? lastInsertId = result.lastInsertId;
-    if lastInsertId is int {
-        return lastInsertId;
+    //int|string? lastInsertId = result.lastInsertId;
+    int|string? affectedRowCount = result.affectedRowCount;
+    if affectedRowCount is int {
+        return affectedRowCount;
     } else {
-        return error("Unable to obtain last insert ID");
+        return error("Unable to obtain affected Raw Count");
     }
 }
 
